@@ -1,0 +1,482 @@
+{
+  "name": "منو اصلی",
+  "categories": [
+    {
+      "name": "کیمباپ",
+      "icon": "utensils",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "کیمباپ بولگوگی",
+          "description": "کیم( برگ جلبک گلد)، برنج کره ای، گوشت فیله گوساله طعم دار شده بولگوگی، سبزیجات گریل",
+          "price": 590000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710343176.jpg"
+        },
+        {
+          "name": "یاچه (سبزیجات)",
+          "description": "کیم( برگ جلبک گلد)، برنج کره ای، دانموجی، قارچ، هویج، خیار، کیمچی، کاهو فرانسه",
+          "price": 430000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710342594.jpg"
+        },
+        {
+          "name": "اورجینال",
+          "description": "کیم( برگ جلبک گلد) ، برنج کره ای، سوسیس رشته ای سرخ شده، دانموجی، خیار، رول تخم مرغ، کاهو فرانسه",
+          "price": 390000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710342494.jpg"
+        },
+        {
+          "name": "یانا",
+          "description": "کیم( برگ جلبک گلد) ، برنج کره ای، پنیر فیلادلفیا، کرب، میگو سوخاری، اسموک سلمن",
+          "price": 830000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710342372.jpg"
+        },
+        {
+          "name": "فیلادلفیا",
+          "description": "کیم( برگ جلبک گلد) ، برنج کره ای، پنیر فیلادلفیا، آووکادو، کرب، خیار",
+          "price": 630000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710342269.jpg"
+        },
+        {
+          "name": "چیکن تریاکی",
+          "description": "کیم(برگ جلبک گلد) ،برنج کره ای، فیله مرغ سوخاری، کاهو فرانسه، خیار، دانموجی، همراه با سس تریاکی کره ای",
+          "price": 500000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710342006.jpg"
+        },
+        {
+          "name": "سکادو",
+          "description": "کیم(برگ جلبک گلد)، برنج کره ای، میگو سوخاری، پنیر فیلادلفیا، آووکادو، توبیکو، مایونز ژاپنی",
+          "price": 690000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1719564520.jpg"
+        }
+      ]
+    },
+    {
+      "name": "سالاد ",
+      "icon": "leaf",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "سالاد سانگچو",
+          "description": "",
+          "price": 170000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/header_3664_1709658642.png"
+        },
+        {
+          "name": "سالاد جانگ",
+          "description": "کاهو، فیله سوخاری، چیبل، کاپاریس، زیتون، پارمزان، گوجه چری، جوانه، سس مخصوص",
+          "price": 450000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710352344.jpg"
+        },
+        {
+          "name": "سالاد هسانمول",
+          "description": "کاهو، اسموک سلمون، کرب، میگو، آووکادو، هویج، خیار، روغن کنجد کره ای، سس مایونز کره ای",
+          "price": 980000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710351797.jpg"
+        }
+      ]
+    },
+    {
+      "name": "پیش غذا ",
+      "icon": "utensils",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "پِنگی بُسُت",
+          "description": "پِنگی بُسُت (قارچ انوکی)، قارچ صدفی، به همراه سس تند کره ای\r\n\r\nسس تند قابل حذف و یا قابل سرو بصورت جداگانه در کنار قارچ",
+          "price": 560000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1711295332.jpg"
+        },
+        {
+          "name": "قارچ سوخاری",
+          "description": "",
+          "price": 190000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710589036.jpg"
+        },
+        {
+          "name": "پیاز سوخاری",
+          "description": "پیاز سوخاری، جوانه، کنجد، پیازچه",
+          "price": 200000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710589217.jpg"
+        },
+        {
+          "name": "سیب زمینی سرخ کرده",
+          "description": "",
+          "price": 180000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710588796.jpg"
+        },
+        {
+          "name": "کامجا تیگیم",
+          "description": "سیب زمینی تنوری سوخاری",
+          "price": 260000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710353185.jpg"
+        },
+        {
+          "name": "کیمچی",
+          "description": "",
+          "price": 140000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710588503.jpg"
+        },
+        {
+          "name": "دانموجی",
+          "description": "",
+          "price": 105000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710588457.jpg"
+        },
+        {
+          "name": "چبسلداگ (موچی)",
+          "description": "خمیر گلوتینوس، فیلینگ های متفاوت شکلاتی و میوه ای",
+          "price": 95000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710353079.jpg"
+        }
+      ]
+    },
+    {
+      "name": "کورن داگ ",
+      "icon": "utensils",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "چیز",
+          "description": "پنیر موزارلا به همراه روکش سوخاری",
+          "price": 135000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710584313.jpg"
+        },
+        {
+          "name": "موزارلا",
+          "description": "سوسیس، پنیر موزارلا به همراه روکش سوخاری",
+          "price": 125000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710585109.jpg"
+        },
+        {
+          "name": "اورجینال",
+          "description": "سوسیس به همراه روکش سوخاری",
+          "price": 120000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710585174.jpg"
+        }
+      ]
+    },
+    {
+      "name": "مندو ",
+      "icon": "utensils",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "مندو گوشت",
+          "description": "خمیر دست ساز مندو، گوشت چرخ کرده مرینیت شده، سبزیجات، پنیر توفو، سویا سس، روغن کنجد کره ای، ادویه مخصوص",
+          "price": 460000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710359151.jpg"
+        }
+      ]
+    },
+    {
+      "name": "برنجی ",
+      "icon": "utensils",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "برنج",
+          "description": "",
+          "price": 120000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/header_3664_1709658642.png"
+        },
+        {
+          "name": "پِنگی بُسُت دُپ باپ",
+          "description": "پنگی بوسوت(قارچ انوکی)، قارچ صدفی، سبزیجات تفت داده شده مزه دار شده، برنج، تخم مرغ نیمرو، ساید کیمچی، سالاد، خیار",
+          "price": 480000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1711294999.jpg"
+        },
+        {
+          "name": "بیبیمباپ",
+          "description": "حجم تک نفره/ 2نفره\r\nبرنج، سبزیجات مختلف تفت داده شده (قارچ صدفی، قارچ، اسفناج، هویج، کدو، جوانه، کیمچی و...)، گوشت مرینیت شده با سس بولگوگی، تخم مرغ، سس تند مخصوص بیبیمباپ",
+          "price": 0,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710846116.jpg"
+        }
+      ]
+    },
+    {
+      "name": "خورشتی ",
+      "icon": "utensils",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "بوده جیگه",
+          "description": "(طبخ روی میز مشتری)\r\nنودل کره ای، سبزیجات مختلف، پنیر توفو، سوسیس، کیمچی، خوراک لوبیا، پنیر گودا، رب تند گوچو جانگ، ادویه های مخصوص بوده جیگه، سویا سس، روغن کنجد کره ای\r\nبه همراه دو کاسه برنج",
+          "price": 730000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710359376.jpg"
+        }
+      ]
+    },
+    {
+      "name": "گریل ",
+      "icon": "utensils",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "بولگوگی",
+          "description": "250 گرم فیله گوساله مزه دار شده به سبک باربیکیو کره ای به همراه ساید رب سامجانگ، سیر ترشی، کیمچی، کاهو فرانسه و یک کاسه برنج",
+          "price": 890000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710585387.jpg"
+        }
+      ]
+    },
+    {
+      "name": "نودل",
+      "icon": "utensils",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "بولگوگی رامیان",
+          "description": "نودل همراه با سبزیجات و گوشت تکه ای مرینیت شده ی بولگوگی",
+          "price": 550000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1719563502.jpeg"
+        },
+        {
+          "name": "جاجانگمیان",
+          "description": "نودل همراه با سس لوبیای سیاه، سبزیجات (پیاز نگینی،هویج نگینی تفت داده شده) روغن کنجد کره ای، پیازچه، نخودسبز پخته به همراه گارنیش خیار",
+          "price": 390000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710845827.jpg"
+        },
+        {
+          "name": "شین رامیان",
+          "description": "نودل سوپی تند کره ای (درجه بندی انتخابی، سبزیجات، سس تند و ادویه های مخصوص کره ای، روغن کنجد، پیازچه، جوانه، کنجد، تخم مرغ (انتخابی)",
+          "price": 350000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1711293762.jpg"
+        },
+        {
+          "name": "همول رامیان",
+          "description": "",
+          "price": 590000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710845675.jpg"
+        },
+        {
+          "name": "رابوگی",
+          "description": "8تکه کیک برنجی کره ای، رشته نودل دست ساز، سس تند مخصوص داگبوگی(گوچوجانگ) ،نصف تخم مرغ آبپز، سوسیس، به همراه گارنیش پنیر پیتزا، پیازچه، کنجد\r\n\r\n\r\nتندی این غذا از ( 1 تا 10 ) 4 میباشد\r\nهر یک از مواد داخل این غذا بغیر از سس تند مخصوص غذا، به دلخواه مشتری قابل حذف میباشد",
+          "price": 580000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/header_3664_1709658642.png"
+        },
+        {
+          "name": "داگبوگی",
+          "description": "16 تکه کیک برنجی در سس داگبوگی (رب تند گوچوجانگ) ، سوسیس، نصف تکه تخم مرغ آبپز به همراه گارنیش پنیر پیتزا، پیازچه و کنجد\r\n\r\nاین غذا بصورت بیسیک تند میباشد و درجه ی تندی این غذا از (1 تا 10) 4 هست\r\n\r\nبغیر از حذف تندی از غذا هر یک از مواد داخل این غذا بصورت دلخواه مشتری قابل حذف میباشد",
+          "price": 690000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1711292976.jpg"
+        },
+        {
+          "name": "بولداگ رامیان",
+          "description": "نودل های تند کره ای غیرسوپی در طعم های مختلف: پنیری، خامه پنیر، تندو لیمویی به همراه سبزیجات\r\n\r\nتندی این غذا بین 5 تا 10 به دلخواه مشتری قابل انتخاب میباشد\r\n\r\nبدلیل اصالت و طعم این نوع نودل که در تندی هست درصورت انتخاب تندی درجه ی خیلی پایین طعم و تیست این غذا ضعیف و کم میشود به همین دلیل درجه ی تندی این غذا مینیموم از 5 شروع میشود",
+          "price": 350000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710845723.jpg"
+        },
+        {
+          "name": "جبچه (بدون گوشت)",
+          "description": "نودل شیشه ای سیب زمینی شیرین، سبزیجات تفت داده شده (قارچ صدفی، اسفناج، هویج، کدو، پیاز، پیازچه، روغن کنجد کره ای، سویا سس، ادویه مخصوص جبچه(طعم ملایم شیرین)\r\nبه همراه گارنیش کران ماری ( رشته های رول تخم مرغ)",
+          "price": 350000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710360201.jpg"
+        },
+        {
+          "name": "جبچه (با گوشت)",
+          "description": "نودل شیشه ای سیب زمینی شیرین، سبزیجات تفت داده شده (قارچ صدفی، اسفناج، هویج، کدو، پیاز، پیازچه، روغن کنجد کره ای، سویا سس، ادویه مخصوص جبچه(طعم ملایم شیرین)\r\nبه همراه گارنیش کران ماری ( رشته های رول تخم مرغ)",
+          "price": 490000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710360201.jpg"
+        }
+      ]
+    },
+    {
+      "name": "سوخاری ",
+      "icon": "drumstick-bite",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "سونسال چیکن",
+          "description": "تکه های سینه مرغ سوخاری به سبک کره ای، سالاد، به همراه گارنیش جوانه، پیازچه، کنجد و سس انتخابی کره ای ( هانی یانگنیام، مِکُوم، تانجان ) \r\n\r\n\r\nسونسال ویژه به همراه سیبزمینی سرخکرده میباشد",
+          "price": 0,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710585999.jpg"
+        },
+        {
+          "name": "فیله 4 تکه",
+          "description": "4 تکه فیله سوخاری به سبک کره ای، سالاد، سیب زمینی، به همراه گارنیش پیازچه، جوانه، کنجد، سس کره ای انتخابی (هانی یانگنیام، مکوم، تانجان)",
+          "price": 465000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710844567.jpg"
+        },
+        {
+          "name": "کتف سوخاری (6)",
+          "description": "6 یا 9 تکه کتف سوخاری به سبک کره ای، سالاد، سیب زمینی به همراه گارنیش پیازچه، جوانه، کنجد و سس کره ای انتخابی ( هانی یانگنیام، مِکُوم، تانجان)",
+          "price": 530000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710585856.jpg"
+        },
+        {
+          "name": "کتف سوخاری (9 تکه)",
+          "description": "6 یا 9 تکه کتف سوخاری به سبک کره ای، سالاد، سیب زمینی به همراه گارنیش پیازچه، جوانه، کنجد و سس کره ای انتخابی ( هانی یانگنیام، مِکُوم، تانجان)",
+          "price": 430000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710585856.jpg"
+        },
+        {
+          "name": "چیبل",
+          "description": "توپک های میکس مرغ و پنیر سوخاری، سالاد، به همراه گارنیش جوانه، پیازچه، کنجد، سس کره ای انتخابی (هانی یانگنیام، مکوم، تانجان)",
+          "price": 0,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710585758.jpg"
+        },
+        {
+          "name": "میگو سوخاری",
+          "description": "",
+          "price": 630000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710585672.jpg"
+        },
+        {
+          "name": "میگو تمپورا",
+          "description": "",
+          "price": 630000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710585644.jpg"
+        }
+      ]
+    },
+    {
+      "name": "نوشیدنی ",
+      "icon": "soda-can",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "آبمیوه طبیعی فصل",
+          "description": "",
+          "price": 160000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/header_3664_1709658642.png"
+        },
+        {
+          "name": "آیس کافی کُره ای",
+          "description": "آیس کافی کره ای همراه با لیوان یخ",
+          "price": 150000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1753959361.jpg"
+        },
+        {
+          "name": "اسموتی کُره ای(طبیعی)",
+          "description": "",
+          "price": 140000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1736393183.jpg"
+        },
+        {
+          "name": "توکجه",
+          "description": "",
+          "price": 230000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/header_3664_1709658642.png"
+        },
+        {
+          "name": "موهیتو طبیعی",
+          "description": "",
+          "price": 180000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1736391540.jpg"
+        },
+        {
+          "name": "نوشابه",
+          "description": "",
+          "price": 42000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710586396.jpg"
+        },
+        {
+          "name": "آب معدنی",
+          "description": "",
+          "price": 15000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710587151.jpg"
+        }
+      ]
+    }
+  ]
+}

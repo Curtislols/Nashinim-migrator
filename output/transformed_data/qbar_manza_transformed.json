@@ -1,0 +1,1095 @@
+{
+  "name": "کافه مان زا",
+  "categories": [
+    {
+      "name": "توضیحات",
+      "icon": "utensils",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "بهتر است بدانید!",
+          "description": "زمان استفاده در زمان شلوغی از هر میز بین یک ساعت و نیم تا دو ساعت است ، در صورت نیاز به زمان بیشتر لطفا با ما در میون بذارید .",
+          "price": 0,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1736712987.jpg"
+        }
+      ]
+    },
+    {
+      "name": "غذای اصلی",
+      "icon": "utensils",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "عدس پلو بروجنی",
+          "description": "گوشت مزه دار شده.برنج.خرما.کشمش.شات ماست",
+          "price": 343000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1710350034.jpg"
+        },
+        {
+          "name": "نخود پلو با سس آلو",
+          "description": "برنج ,نخود فرنگی ,میت بال ,گشنیز ,زردچوبه و سس آلو",
+          "price": 373000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "سماق پلو بروجردی",
+          "description": "برنج ,سماق ,میت بال ,سس سماق پلو",
+          "price": 360000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "قلیه میگو بوشهری",
+          "description": "برنج ,سبزی قلیه ,آب تمرهندی ,میگو",
+          "price": 463000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "پایا میگو",
+          "description": "برنج ,میگو ,گوجه ,فلفل دلمه ,پیاز ,نخود فرنگی ,شات زیتون",
+          "price": 493000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "پلو یونانی",
+          "description": "برنج ,گوجه ,زیتون سیاه ,پیاز ,قارچ ,جعفری ,شات تاتزیکی",
+          "price": 319000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "هویج پلو با سس انار و پرتقال",
+          "description": "برنج سینه مرغ هویج زرشک سس انار و پرتقال",
+          "price": 349000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "کباب دیگی زعفرانی",
+          "description": "برنج زعفرانی ایرانی، ۱۵۰گرم گوشت مزه دار شده، سس سماق، سس چری، شات ماست",
+          "price": 462000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1678291115.jpg"
+        },
+        {
+          "name": "مرغ کاری با برنج",
+          "description": "برنج ایرانی، خورشت کاری، سیب زمینی، جعفری، شات ماست",
+          "price": 391000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1736620001.jpg"
+        },
+        {
+          "name": "استیک مرغ",
+          "description": "300گرم سینه مرغ گریل، سبزیجات تنوری، سیب زمینی، سس انار و زرشک، سس قارچ و اسفناج",
+          "price": 546000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1678291895.jpg"
+        }
+      ]
+    },
+    {
+      "name": "پیتزا",
+      "icon": "pizza-slice",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "پیتزا سیر و استیک",
+          "description": "فیله گوشت مزه دار شده .سس الفردو.روکولا .بالزامیک. پنیر توپی",
+          "price": 597000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1683128451_kfpc6dU.jpg"
+        },
+        {
+          "name": "پیتزا مرغ باربیکیو",
+          "description": "سینه مرغ مزه دارشده .باربیکیو .قارچ. .پنیر توپی",
+          "price": 522000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "پیتزا پستو بیکن",
+          "description": "بیکن 90درصد.پستو ریحان.جوانه ماش.زرشک.پنیرتوپی",
+          "price": 597000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1683128569.jpg"
+        },
+        {
+          "name": "پیتزا پپرونی",
+          "description": "پپرونی , سس مارینارا, پنیر توپی ,ریحان ایتالیایی",
+          "price": 497000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1736617605.jpg"
+        },
+        {
+          "name": "پیتزا مارگاریتا",
+          "description": "سس مارینارا,گوجه گیلاسی,ریحان ایتالیایی,پنیر توپی",
+          "price": 353000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1736617633.jpg"
+        },
+        {
+          "name": "پیتزا ملانزانه",
+          "description": "بادمجان کبابی ، پنیر توپی ، سس کرم چیز ، سس مارینارا",
+          "price": 379000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "پیتزا میته بلانکو",
+          "description": "خمیر پیتزا ,کرم ماشروم ,سس شیر و خامه ,گوشت چرخ شده ,گوجه خشک ,جعفری",
+          "price": 475000,
+          "status": "available",
+          "image": null
+        }
+      ]
+    },
+    {
+      "name": "پاستا",
+      "icon": "utensils",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "پاستا روزتا",
+          "description": "سس روزتا مرغ گریل مزه دار شده فتوچیتی پارمزان گوجه گیلاسی",
+          "price": 395000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1707239476.jpg"
+        },
+        {
+          "name": "پاستا آلانورما",
+          "description": "اسپاگتی ، بادمجان ، ریحان ایتالیایی ، سس مارینارا",
+          "price": 279000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "پاستا کچوپپه",
+          "description": "اسپاگتی ، میگو ، فلفل سیاه رست شده ، سس شیر و خامه،  ریحان ایتالیایی",
+          "price": 429000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "پاستا کرم ماشروم",
+          "description": "پنه،  میت بال ، گوجه خشک، سس شیر و خامه ، کرم ماشروم",
+          "price": 412000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "پاستا سبزیجات",
+          "description": "پنه، سبزیجات گریل، پنیر پارمزان، ریحان، سس روزتا",
+          "price": 333000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1678291943.jpg"
+        },
+        {
+          "name": "پاستا مرغ و خامه",
+          "description": "120گرم مرغ گریل، پنه، پنیر موزارلا، جعفری، قارچ, سس خامه",
+          "price": 395000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1736672564.jpg"
+        }
+      ]
+    },
+    {
+      "name": "برگر",
+      "icon": "hamburger",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "برگر مرغ",
+          "description": "مرغ سوخاری، سس تارتار، کاهو فرانسه،سالاد ساید، سس چیلی تای",
+          "price": 446000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1678291334.jpg"
+        },
+        {
+          "name": "همبرگر کلاسیک",
+          "description": "150گرم گوشت برگر، گوجه، کاهو فرانسه، پیاز کاراملی، دیپ گودا، سس برگر کلاسیک، سالاد ساید",
+          "price": 478000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1701340470.jpg"
+        },
+        {
+          "name": "برگر قارچ",
+          "description": "150گرم گوشت برگر، گوجه، کاهو فرانسه، سس قارچ، دیپ گودا، سس برگر کلاسیک، سالاد ساید",
+          "price": 534000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1677103591.jpg"
+        }
+      ]
+    },
+    {
+      "name": "آسیایی",
+      "icon": "utensils",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "چاپسویی (سبزیجات)",
+          "description": "",
+          "price": 285000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1678977901.jpg"
+        }
+      ]
+    },
+    {
+      "name": "پنینی و رپ",
+      "icon": "utensils",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "پنینی مرغ و پستو",
+          "description": "مرغ مزه دار شده، سس پستو، جوانه ماش،سالاد ساید،‌ سس چیلی تای،‌ نان چاپاتا",
+          "price": 433000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1736619472.jpg"
+        },
+        {
+          "name": "پنینی مرغ و بادمجان",
+          "description": "مرغ، پستو گوجه، بادمجان، سالاد ساید، سس چیلی تای، نان چاپاتا",
+          "price": 411000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1707239370.jpg"
+        }
+      ]
+    },
+    {
+      "name": "پیش غذا",
+      "icon": "utensils",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "حمص",
+          "description": "نخود.ارده کنجد.روغن زیتون.سیر",
+          "price": 276000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1710350076.jpg"
+        },
+        {
+          "name": "میرزاقاسمی",
+          "description": "میرزا قاسمی به همراه شات سبزی",
+          "price": 221000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1710350276.jpg"
+        },
+        {
+          "name": "آبدوغ خیار",
+          "description": "ماست ,خیار ,گل محمدی ,سبزی ,کشمش ,گردو ,دوغ ,نعنا ,نان خشک",
+          "price": 283000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "بال با سس بوفالو",
+          "description": "",
+          "price": 306000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1677103700.jpg"
+        },
+        {
+          "name": "سیب زمینی ساده",
+          "description": "سیب زمینی، سس کرم چیز، سس سوئیت چیلی",
+          "price": 231000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1701340512.jpg"
+        },
+        {
+          "name": "سیب زمینی با سس قارچ",
+          "description": "",
+          "price": 368000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1701340600.jpg"
+        }
+      ]
+    },
+    {
+      "name": "سالاد",
+      "icon": "leaf",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "سالاد آنتروکوت",
+          "description": "کاهو، گردو، گوجه، زیتون، سس آنتروکوت",
+          "price": 327000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1677103263.jpg"
+        },
+        {
+          "name": "سالاد سبز",
+          "description": "کاهو، گوجه گیلاسی، بروکلی، فلفل دلمه، زیتون، نان مغزدار، سس وینگرت لیمو نعنا",
+          "price": 331000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1737197297.jpg"
+        },
+        {
+          "name": "- شات سس",
+          "description": null,
+          "price": 9000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1710350575.jpg"
+        },
+        {
+          "name": "سالاد مان زا",
+          "description": "کاهو، مرغ گریل، گوجه گیلاسی، بروکلی، فلفل دلمه، زیتون، نان مغزدار، سس وینگرت لیمو نعنا",
+          "price": 431000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1677103794.jpg"
+        },
+        {
+          "name": "- شات سس",
+          "description": null,
+          "price": 7000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1710350479.jpg"
+        }
+      ]
+    },
+    {
+      "name": "کیک و دسر",
+      "icon": "cake-slice",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "کرامبل سیب گردو",
+          "description": "یک اسلایس، 170 گرم",
+          "price": 115000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1678290997.jpg"
+        },
+        {
+          "name": "براونی خانگی",
+          "description": "",
+          "price": 117000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1701339656.jpg"
+        },
+        {
+          "name": "عسل",
+          "description": "",
+          "price": 19000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "شکلات",
+          "description": "",
+          "price": 23000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "بستنی",
+          "description": "شکلاتی . وانیلی",
+          "price": 19000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "کیک هویج و گردو",
+          "description": "",
+          "price": 141000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "تیرامیسو",
+          "description": "",
+          "price": 166000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "چیزکیک شاتوت",
+          "description": "",
+          "price": 153000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "کیک روز",
+          "description": "",
+          "price": 207000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "تست فرانسوی",
+          "description": "نان بریوش, سیب کاراملی, سس چهارپنیر",
+          "price": 281000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "چیزکیک سن سباستین",
+          "description": null,
+          "price": 137000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1736618168.jpg"
+        }
+      ]
+    },
+    {
+      "name": "نوشیدنی های کنار غذا",
+      "icon": "soda-can",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "اورنجینا",
+          "description": "پرتقال خونی .سیروپ پشن فروت .فانتا",
+          "price": 105000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1701339855.jpg"
+        },
+        {
+          "name": "کوبالیبره",
+          "description": "اب الوورا .سیروپ ابی .اب لیمو . نوشابه کوکا",
+          "price": 105000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1701339877.jpg"
+        },
+        {
+          "name": "کاکتل روبی راش",
+          "description": "اب زرشک, آب پرتقال, انار دان شده",
+          "price": 147000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1736618198.jpg"
+        },
+        {
+          "name": "کاکتل ساید یک",
+          "description": "سودا، لیموترش، خیار، توت فرنگی، آلوورا",
+          "price": 105000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1666347758.jpeg"
+        },
+        {
+          "name": "کاکتل ساید دو",
+          "description": "سکنجبین، بهارنارنج، لیموترش، سودا",
+          "price": 105000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1666347755_VivOl5Z.jpeg"
+        },
+        {
+          "name": "آبجو بدون الکل",
+          "description": "",
+          "price": 53000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1707239808.jpg"
+        },
+        {
+          "name": "آب معدنی",
+          "description": "",
+          "price": 17000,
+          "status": "available",
+          "image": null
+        }
+      ]
+    },
+    {
+      "name": "نوشیدنی سرد",
+      "icon": "soda-can",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "میلک شیک شاتوت",
+          "description": "",
+          "price": 259000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1701339716.jpg"
+        },
+        {
+          "name": "آیس ماچا",
+          "description": "",
+          "price": 173000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "اسموتی آلوجنگلی",
+          "description": "آب آلوجنگلی تازه, آلبالو, رب انار, شاتوت",
+          "price": 253000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "آب میوه طبیعی (پرتقال)",
+          "description": "",
+          "price": 175000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "آب میوه طبیعی (طالبی)",
+          "description": "",
+          "price": 121000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "آب میوه طبیعی (پرتقال لیموشیرین)",
+          "description": "",
+          "price": 97000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "آب میوه طبیعی (هندوانه)",
+          "description": "",
+          "price": 121000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "موهیتو",
+          "description": "",
+          "price": 145000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1710350310.jpg"
+        },
+        {
+          "name": "میلک شیک اسپرسو",
+          "description": "شیر، بستنی وانیل،  اسپرسو دبل",
+          "price": 313000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1736620286.jpg"
+        },
+        {
+          "name": "میلک شیک بادام زمینی",
+          "description": "400 میلی لیتر، بستنی وانیل، کره بادام زمینی",
+          "price": 259000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1701339999.jpg"
+        },
+        {
+          "name": "کاکتل استوایی",
+          "description": "آب انبه، آب آناناس ، چای ترش، سودا",
+          "price": 103000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1666347820.jpeg"
+        },
+        {
+          "name": "میلک شیک شکلات",
+          "description": "400 میلی لیتر، بستنی شکلاتی، شیر",
+          "price": 249000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1701340078.jpg"
+        },
+        {
+          "name": "اسموتی بلو هتل",
+          "description": "آناناس، سیروپ نارگیل، سیروپ بلو، بستنی وانیل",
+          "price": 232000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1666347776.jpeg"
+        },
+        {
+          "name": "اسموتی ویرجين بانجو",
+          "description": "انبه، لیموترش، سیروپ نارگیل، نعنا",
+          "price": 232000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1666347753.jpeg"
+        },
+        {
+          "name": "اسموتی سیب و خیار",
+          "description": "سیب، خیار، لیموترش، آب سیب، نعنا",
+          "price": 221000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1666347776_rUJVMTj.jpeg"
+        },
+        {
+          "name": "اسموتی فصل (هندوانه خيار)",
+          "description": "",
+          "price": 147000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1666347829_4ihtlSs.jpg"
+        },
+        {
+          "name": "اسموتی فصل (پرتقال توت فرنگی)",
+          "description": "",
+          "price": 201000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1666347829_4ihtlSs.jpg"
+        },
+        {
+          "name": "شربت خیار سڪنجبين",
+          "description": "",
+          "price": 145000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1666347790.jpeg"
+        },
+        {
+          "name": "شربت نعنا زعفران",
+          "description": "شربت نعنا زعفران، گلاب، خاکشیر، اب لیمو، عرق کاسنی",
+          "price": 155000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1666347810.jpeg"
+        },
+        {
+          "name": "عرق بهار نارنج شيراز",
+          "description": "",
+          "price": 145000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1710350622.jpg"
+        },
+        {
+          "name": "عرق بیدمشک نسترن",
+          "description": "عرق نسترن، عرق بیدمشک، چای ترش، شهد شکر",
+          "price": 145000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1666347811.jpeg"
+        },
+        {
+          "name": "عرق کاسنی",
+          "description": "عرق کاسنی، خاکشیر ، شهد شکر",
+          "price": 145000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1666347803.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "قهوه",
+      "icon": "coffee",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "لاته شیربادام",
+          "description": "اسپرسو+ شیر بادام",
+          "price": 195000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1710350001.jpg"
+        },
+        {
+          "name": "اسپرسو",
+          "description": "اسپرسو دبل شات ۱۰۰ درصد عربیکا",
+          "price": 137000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1707239721.jpg"
+        },
+        {
+          "name": "آمریکانو",
+          "description": "300 میلی لیتر، دبل اسپرسو، آب جوش",
+          "price": 137000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1677826414.jpg"
+        },
+        {
+          "name": "کافه لاته (لاته شیربادام)",
+          "description": "300 میلی لیتر، دبل اسپرسو، شیر فوم دار",
+          "price": 195000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1677826535.jpg"
+        },
+        {
+          "name": "کافه لاته (لاته)",
+          "description": "300 میلی لیتر، دبل اسپرسو، شیر فوم دار",
+          "price": 151000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1677826535.jpg"
+        },
+        {
+          "name": "کاپوچینو (کاپوچینو شیربادام)",
+          "description": "",
+          "price": 187000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1710350358.jpg"
+        },
+        {
+          "name": "کاپوچینو (کاپوچینو)",
+          "description": "",
+          "price": 145000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1710350358.jpg"
+        },
+        {
+          "name": "طعم دهنده ها (عسل)",
+          "description": "",
+          "price": 17000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "طعم دهنده ها (دارچین)",
+          "description": "",
+          "price": 17000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "طعم دهنده ها (شکلات)",
+          "description": "",
+          "price": 17000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "طعم دهنده ها (فندق)",
+          "description": "",
+          "price": 17000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "طعم دهنده ها (کارامل)",
+          "description": "",
+          "price": 17000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "قهوه دمی دستگاهی",
+          "description": "با یک بار شارژ رایگان",
+          "price": 179000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1677826724.jpg"
+        },
+        {
+          "name": "وی سیکستی",
+          "description": "300 میلی لیتر قهوه تک خاستگاه",
+          "price": 207000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1666347795.jpeg"
+        },
+        {
+          "name": "آیس آمریکانو",
+          "description": "300 میلی لیتر، دبل اسپرسو، آب سرد، یخ",
+          "price": 137000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1701340219.jpg"
+        },
+        {
+          "name": "آیس لاته (آیس لاته شیربادام)",
+          "description": "300 میلی لیتر، دبل اسپرسو، شیر، یخ",
+          "price": 195000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1701340124.jpg"
+        },
+        {
+          "name": "آیس لاته (آیس لاته)",
+          "description": "300 میلی لیتر، دبل اسپرسو، شیر، یخ",
+          "price": 151000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1701340124.jpg"
+        },
+        {
+          "name": "آفوگاتو (بستنى شکلات)",
+          "description": "",
+          "price": 149000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1677826266.jpg"
+        },
+        {
+          "name": "آفوگاتو (بستنى وانیل)",
+          "description": "",
+          "price": 149000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1677826266.jpg"
+        },
+        {
+          "name": "کلدبرو",
+          "description": "300 میلی لیتر، قهوه سرد دم",
+          "price": 197000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1677827114.jpg"
+        }
+      ]
+    },
+    {
+      "name": "قهوه سرد",
+      "icon": "coffee",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "آیس لاته شیربادام",
+          "description": "شیربادام سرد,اسپرسو",
+          "price": 195000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1710350103.jpg"
+        }
+      ]
+    },
+    {
+      "name": "نوشیدنی گرم",
+      "icon": "soda-can",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "چای آلبالو",
+          "description": "آلبالو. نبات .کوکی و چوب دارچین",
+          "price": 195000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1701339907.jpg"
+        },
+        {
+          "name": "چای کرک",
+          "description": "",
+          "price": 151000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1731431077.jpg"
+        },
+        {
+          "name": "هات بیسکویت",
+          "description": "",
+          "price": 183000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1731431172.jpg"
+        },
+        {
+          "name": "هات چاکلت فندق",
+          "description": "",
+          "price": 167000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1731431105.jpg"
+        },
+        {
+          "name": "دمنوش زعفران",
+          "description": "",
+          "price": 187000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "لته ماچا",
+          "description": "",
+          "price": 173000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "گلدن میلک",
+          "description": "",
+          "price": 109000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1731431197.jpg"
+        },
+        {
+          "name": "هات چاکلت (هات چاکلت شیربادام)",
+          "description": "300 میلی لیتر",
+          "price": 187000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1677826878.jpg"
+        },
+        {
+          "name": "هات چاکلت (هات چاکلت)",
+          "description": "300 میلی لیتر",
+          "price": 155000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1677826878.jpg"
+        },
+        {
+          "name": "چای ماسالا (ماسالا شیربادام)",
+          "description": "300 میلی لیتر",
+          "price": 187000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1677827239.jpg"
+        },
+        {
+          "name": "چای ماسالا (ماسالا)",
+          "description": "300 میلی لیتر",
+          "price": 155000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1677827239.jpg"
+        },
+        {
+          "name": "شیر عسل دارچین (شیرعسل دارچین شیربادام)",
+          "description": "300 میلی لیتر",
+          "price": 147000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1679078096.jpg"
+        },
+        {
+          "name": "شیر عسل دارچین (شیرعسل دارچین)",
+          "description": "300 میلی لیتر",
+          "price": 109000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1679078096.jpg"
+        },
+        {
+          "name": "چای سیلان",
+          "description": "300 میلی لیتر چای سیلان، ، دارچین، نبات، کوکی",
+          "price": 85000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1677827030.jpg"
+        },
+        {
+          "name": "چای دمی لاهیجان (قوری)",
+          "description": "300 میلی لیتر چای لاهیجان، ساید بهارنارنج، دارچین، به لیمو، گل محمدی، نبات، کوکی",
+          "price": 145000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1677827351.jpg"
+        },
+        {
+          "name": "دمنوش پاییز",
+          "description": "آویشن، زنجبیل، نعنا، لیمو",
+          "price": 139000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1701340294.jpg"
+        },
+        {
+          "name": "دمنوش گل گاوزبان",
+          "description": "گل گاو زبان، لیمو عمانی، سمبل الطیب",
+          "price": 175000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1701340161.jpg"
+        },
+        {
+          "name": "دمنوش عناب بادیان",
+          "description": "300 میلی لیتر، عناب، بادیان، چای سیب، دارچین",
+          "price": 175000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1701340352.jpg"
+        },
+        {
+          "name": "دمنوش میوه ای",
+          "description": "300 میلی لیتر، سیب سبز، توت فرنگی، هل، به لیمو، لیموترش",
+          "price": 175000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1701340416.jpg"
+        },
+        {
+          "name": "دمنوش سیب زنجبیل",
+          "description": "300 میلی لیتر، زنجبیل، سیب، نعنا، بهار نارنج، لیموترش",
+          "price": 175000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1701340542.jpg"
+        }
+      ]
+    },
+    {
+      "name": "صبحانه",
+      "icon": "croissant",
+      "visibleInMenu": true,
+      "items": [
+        {
+          "name": "خاچاپوری",
+          "description": "خمیرناپولیتن, تخم مرغ, مخلوط چهارپنیر",
+          "price": 312000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "تست فرانسوی",
+          "description": "نان بریوش, سیب کاراملی, سس چهارپنیر",
+          "price": 281000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "املت گوجه",
+          "description": "مایه املت، تخم مرغ، کرم چیز، نان سنگک",
+          "price": 193000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1707239913.jpg"
+        },
+        {
+          "name": "بشقاب گرم",
+          "description": "یک عدد نیمرو، کوکتل، خوراک لوبیا، بیکن، سبزیجات، نان تست",
+          "price": 437000,
+          "status": "available",
+          "image": null
+        },
+        {
+          "name": "نیمرو با پنیر و پیاز",
+          "description": "سه عدد نیمرو، پیاز داغ، کرم چیز، نان سنگک",
+          "price": 189000,
+          "status": "available",
+          "image": null,
+          "original_image_url": "https://media.qbar.ir/statics/food/1666347826.jpeg"
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,5 @@
 # scrapers/menusazscraper.py
 import json
-import re
 from urllib.parse import urlparse
 from playwright.sync_api import sync_playwright
 
@@ -19,10 +18,9 @@ def scrape(url: str) -> dict:
         page = browser.new_page()
         
         try:
-            # --- STAGE 1: Scan for Menu Options ---
             page.goto(url, wait_until="domcontentloaded", timeout=30000)
             print("     Scanning for menu options...")
-            page.wait_for_selector(button_selector, timeout=5000) # Wait for buttons to appear
+            page.wait_for_selector(button_selector, timeout=5000)
 
             choices = page.locator(button_selector).all()
             if not choices:
@@ -32,7 +30,6 @@ def scrape(url: str) -> dict:
             for i, choice in enumerate(choices, start=1):
                 print(f"       [{i}] {choice.text_content().strip()}")
             
-            # Get user's choice from the terminal
             while True:
                 try:
                     user_choice_idx = int(input("\n     Enter the number of your choice: ")) - 1
@@ -46,10 +43,8 @@ def scrape(url: str) -> dict:
             
             print(f"     You chose: '{chosen_button.text_content().strip()}'")
 
-            # --- STAGE 2: Click and Capture the Real Network Response ---
             print("     Clicking button and waiting for API data...")
             
-            # Use page.expect_response to wait for the POST request triggered by the click
             with page.expect_response(lambda res: api_path_keyword in res.url and res.request.method == "POST") as response_info:
                 chosen_button.click()
             

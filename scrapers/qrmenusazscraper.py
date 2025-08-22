@@ -14,10 +14,11 @@ def scrape(url: str) -> dict:
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
         
-        page.goto(url, wait_until="networkidle")
+        # THE FIX: Changed 'networkidle' to the more reliable 'domcontentloaded'
+        page.goto(url, wait_until="domcontentloaded")
 
         menu_button = page.locator(button_selector).first
-        if not menu_button.is_visible():
+        if not menu_button.is_visible(timeout=5000):
             raise ValueError(f"No visible button found with selector '{button_selector}'")
         
         print(f"     Found and clicking button: '{menu_button.locator('span').inner_text().strip()}'")

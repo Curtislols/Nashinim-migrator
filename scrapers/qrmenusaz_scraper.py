@@ -1,7 +1,10 @@
-# scrapers/qrmenusazscraper.py
 import json
+import re
+import requests
+import time
 from urllib.parse import urlparse
-from playwright.sync_api import sync_playwright
+from scrapers.scraper_helpers import get_browser_page # Was: from .shared...
+
 
 def scrape(url: str) -> dict:
     """Scrapes a single QRmenusaz URL automatically and returns the data."""
@@ -10,11 +13,7 @@ def scrape(url: str) -> dict:
     button_selector = ".m6_main_cat"
     record = {"url": url, "hostname": urlparse(url).netloc, "api_data": None}
 
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
-        
-        # THE FIX: Changed 'networkidle' to the more reliable 'domcontentloaded'
+    with get_browser_page() as page:
         page.goto(url, wait_until="domcontentloaded")
 
         menu_button = page.locator(button_selector).first
@@ -31,6 +30,5 @@ def scrape(url: str) -> dict:
             raise ValueError(f"API responded with status {response.status}")
         
         record["api_data"] = response.json()
-        browser.close()
         
     return record

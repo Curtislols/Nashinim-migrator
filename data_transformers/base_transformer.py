@@ -1,6 +1,6 @@
 # data_transformers/shared/base_transformer.py
 from abc import ABC, abstractmethod
-from . import helpers # Import our new helpers
+from . import helpers
 
 class BaseTransformer(ABC):
     """
@@ -12,24 +12,20 @@ class BaseTransformer(ABC):
         self.icon_mapping = icon_mapping
         self.default_icon = default_icon
 
-    # --- The Main Transformation Logic (No longer duplicated!) ---
     def transform(self, source_data: dict) -> dict | None:
         """Transforms raw source data into our standard menu format."""
         try:
-            # 1. Check if the data is valid first
-            if not self._is_source_valid(source_data.get("api_data", {})):
+            api_data = source_data.get("api_data", {})
+            if not self._is_source_valid(api_data):
                 print(f"  -> Invalid or empty source data for {self.__class__.__name__}.")
                 return None
 
-            # 2. Get the main menu data object
-            menu_data = self._get_menu_data(source_data.get("api_data", {}))
-
+            menu_data = self._get_menu_data(api_data)
             transformed_menu = {
                 "name": self._get_menu_name(menu_data),
                 "categories": []
             }
 
-            # 3. Universal category and item processing loop
             for source_cat in self._get_categories(menu_data):
                 category_name = self._get_category_name(source_cat)
                 new_category = {
@@ -59,65 +55,27 @@ class BaseTransformer(ABC):
             return None
 
     # --- Abstract Methods (to be implemented by each subclass) ---
-    # These methods define the "contract" that each transformer must follow.
-
     @abstractmethod
-    def _is_source_valid(self, api_data: dict) -> bool:
-        """Check if the essential keys exist in the source data."""
-        pass
-
+    def _is_source_valid(self, api_data: dict) -> bool: pass
     @abstractmethod
-    def _get_menu_data(self, api_data: dict) -> dict:
-        """Return the root object of the menu."""
-        pass
-    
+    def _get_menu_data(self, api_data: dict) -> dict: pass
     @abstractmethod
-    def _get_menu_name(self, menu_data: dict) -> str:
-        """Extract the menu's top-level name."""
-        pass
-
+    def _get_menu_name(self, menu_data: dict) -> str: pass
     @abstractmethod
-    def _get_categories(self, menu_data: dict) -> list:
-        """Extract the list of category objects."""
-        pass
-
+    def _get_categories(self, menu_data: dict) -> list: pass
     @abstractmethod
-    def _get_category_name(self, category: dict) -> str:
-        """Extract name from a single category object."""
-        pass
-
+    def _get_category_name(self, category: dict) -> str: pass
     @abstractmethod
-    def _is_category_visible(self, category: dict) -> bool:
-        """Determine if a category is visible."""
-        pass
-
+    def _is_category_visible(self, category: dict) -> bool: pass
     @abstractmethod
-    def _get_items(self, category: dict) -> list:
-        """Extract the list of item objects from a category."""
-        pass
-
-    # --- Item-level abstract methods ---
+    def _get_items(self, category: dict) -> list: pass
     @abstractmethod
-    def _get_item_name(self, item: dict) -> str:
-        """Extract name from a single item object."""
-        pass
-
+    def _get_item_name(self, item: dict) -> str: pass
     @abstractmethod
-    def _get_item_description(self, item: dict) -> str:
-        """Extract description from a single item object."""
-        pass
-
+    def _get_item_description(self, item: dict) -> str: pass
     @abstractmethod
-    def _get_item_price(self, item: dict):
-        """Extract price from a single item object."""
-        pass
-
+    def _get_item_price(self, item: dict): pass
     @abstractmethod
-    def _get_item_status(self, item: dict) -> str:
-        """Extract availability status from a single item object."""
-        pass
-
+    def _get_item_status(self, item: dict) -> str: pass
     @abstractmethod
-    def _get_item_image_url(self, item: dict) -> str | None:
-        """Extract the original image URL from a single item object."""
-        pass
+    def _get_item_image_url(self, item: dict) -> str | None: pass

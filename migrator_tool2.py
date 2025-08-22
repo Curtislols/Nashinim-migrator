@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 
 # --- Import your specialized functions from your folders ---
-from scrapers import qbarscraper, menusazscraper, qrmenusazscraper, menewautoscraper, delino_scraper
+from scrapers import qbar_scraper, menusaz_scraper, qrmenusaz_scraper, menew_scraper, delino_scraper
 from data_transformers import qbar_transformer, menusaz_transformer, menew_transformer
 
 # Note: This assumes you have a qrmenusaz_transformer.py file.

@@ -1,90 +1,63 @@
 # data_transformers/qbar_transformer.py
-import json
+from .base_transformer import BaseTransformer
 
-# --- Universal Helper Functions ---
-# You can share these across transformers or keep them separate.
+class QbarTransformer(BaseTransformer):
+    """Transforms raw QBar JSON into our standard menu format."""
+    
+    def _is_source_valid(self, api_data: dict) -> bool:
+        return "id" in api_data
 
-def assign_icon(category_name: str, icon_mapping: dict, default_icon: str) -> str:
-    """Assigns an icon by checking for keywords in the category title."""
-    if not category_name:
-        return default_icon
-    for keyword, icon in icon_mapping.items():
-        if keyword in category_name:
-            return icon
-    return default_icon
+    def _get_menu_data(self, api_data: dict) -> dict:
+        return api_data
 
-def assign_icon(category_name: str) -> str:
-    """Assigns an icon by checking for keywords in the category title."""
-    if not category_name:
-        return DEFAULT_ICON
-    for keyword, icon in ICON_MAPPING.items():
-        if keyword in category_name:
-            return icon
-    return DEFAULT_ICON
+    def _get_menu_name(self, menu_data: dict) -> str:
+        return menu_data.get("title", "منو اصلی")
 
-def convert_price_to_toman(price_str: str) -> int:
-    """
-    Converts a price string from an unknown unit (Rial, Toman, or KiloToman)
-    to an integer in Toman using a heuristic.
-    """
-    if not price_str or not price_str.strip().isdigit():
-        return 0
-    price_num = int(price_str.strip())
-    if price_num > 1000000:
-        return price_num // 10
-    elif 0 < price_num < 1000:
-        return price_num * 1000
-    else:
-        return price_num
+    def _get_categories(self, menu_data: dict) -> list:
+        return menu_data.get("menu_with_products", [])
 
-def transform(source_data: dict) -> dict | None:
-    """
-    Transforms a raw QBar JSON object into our standard menu format.
-    """
-    qbar_api_data = source_data.get("api_data")
-    if not qbar_api_data or "error" in qbar_api_data:
-        print("  -> Invalid or empty 'api_data' for Qbar transformer.")
-        return None
+    def _get_category_name(self, category: dict) -> str:
+        return category.get("title", "")
 
-    transformed_menu = {
-        "name": qbar_api_data.get("title", "منو اصلی"),
-        "categories": []
-    }
+    def _is_category_visible(self, category: dict) -> bool:
+        return category.get("sf_active", True)
 
-    source_categories = qbar_api_data.get("menu_with_products", [])
-
-    for source_cat in source_categories:
-        category_name = source_cat.get("title", "")
-        new_category = {
-            "name": category_name,
-            "icon": assign_icon(category_name),
-            "visibleInMenu": source_cat.get("sf_active", True),
-            "items": []
-        }
-
-        for product in source_cat.get("products", []):
-            base_item = {
-                "name": product.get("title"),
-                "description": product.get("content", ""),
-                "price": 0,
-                "status": "available" if product.get("state") == "active" else "unavailable",
-                "image": None,
-            }
-            if product.get("food_images"):
-                base_item["original_image_url"] = product["food_images"][0].get("picture")
-
+    def _get_items(self, category: dict) -> list:
+        # Flatten products and their sub-foods (variations) into one list
+        all_items = []
+        for product in category.get("products", []):
             sub_foods = product.get("sub_foods", [])
             if sub_foods:
                 for sub_food in sub_foods:
-                    variation_item = base_item.copy()
-                    variation_item["name"] = f"{base_item['name']} ({sub_food['title']})"
-                    variation_item["price"] = convert_price_to_toman(sub_food.get("price", "0"))
-                    new_category["items"].append(variation_item)
+                    # Create a new item for each variation
+                    var_item = {
+                        "base_product": product,
+                        "variation": sub_food
+                    }
+                    all_items.append(var_item)
             else:
-                base_item["price"] = convert_price_to_toman(product.get("price", "0"))
-                new_category["items"].append(base_item)
+                # This is a simple product with no variations
+                all_items.append({"base_product": product, "variation": None})
+        return all_items
 
-        if new_category["items"]:
-            transformed_menu["categories"].append(new_category)
-            
-    return transformed_menu
+    def _get_item_name(self, item: dict) -> str:
+        base_name = item["base_product"].get("title", "")
+        if item["variation"]:
+            var_name = item["variation"].get("title", "")
+            return f"{base_name} ({var_name})"
+        return base_name
+
+    def _get_item_description(self, item: dict) -> str:
+        return item["base_product"].get("content", "")
+
+    def _get_item_price(self, item: dict):
+        if item["variation"]:
+            return item["variation"].get("price", "0")
+        return item["base_product"].get("price", "0")
+
+    def _get_item_status(self, item: dict) -> str:
+        return "available" if item["base_product"].get("state") == "active" else "unavailable"
+
+    def _get_item_image_url(self, item: dict) -> str | None:
+        images = item["base_product"].get("food_images", [])
+        return images[0].get("picture") if images else None

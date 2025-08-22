@@ -1,85 +1,62 @@
 # data_transformers/snappfood_transformer.py
-import json
+from .base_transformer import BaseTransformer
 
-# --- Universal Helper Functions ---
-def assign_icon(category_name: str, icon_mapping: dict, default_icon: str) -> str:
-    """Assigns an icon by checking for keywords in the category title."""
-    if not category_name:
-        return default_icon
-    for keyword, icon in icon_mapping.items():
-        if keyword in category_name:
-            return icon
-    return default_icon
+class SnappfoodTransformer(BaseTransformer):
+    """Transforms raw Snappfood JSON into our standard menu format."""
+    
+    def _is_source_valid(self, api_data: dict) -> bool:
+        return "menu" in api_data and "profile" in api_data
 
-def assign_icon(category_name: str) -> str:
-    if not category_name: return DEFAULT_ICON
-    for keyword, icon in ICON_MAPPING.items():
-        if keyword in category_name: return icon
-    return DEFAULT_ICON
+    def _get_menu_data(self, api_data: dict) -> dict:
+        return api_data
 
-def convert_price_to_toman(price_input) -> int:
-    if not price_input: return 0
-    try:
-        price_num = int(float(price_input))
-    except (ValueError, TypeError):
-        return 0
-    if price_num > 1000000: return price_num // 10
-    elif 0 < price_num < 1000: return price_num * 1000
-    else: return price_num
+    def _get_menu_name(self, menu_data: dict) -> str:
+        return menu_data.get("profile", {}).get("title", "منو اصلی")
 
-# --- Main Transformer Logic ---
-def transform(source_data: dict) -> dict | None:
-    """
-    Transforms a raw Snappfood JSON object into our standard menu format.
-    """
-    try:
-        # --- THIS IS THE FIX ---
-        # Look inside the 'api_data' key for the profile and menu
-        api_data = source_data.get("api_data", {})
-        profile_data = api_data.get("profile", {})
-        menu_data = api_data.get("menu", {})
+    def _get_categories(self, menu_data: dict) -> list:
+        return menu_data.get("menu", {}).get("menuCategories", [])
+
+    def _get_category_name(self, category: dict) -> str:
+        return category.get("title", "")
+
+    def _is_category_visible(self, category: dict) -> bool:
+        return True
+
+    def _get_items(self, category: dict) -> list:
+        # Flatten products and their variations into one list
+        all_items = []
+        for product in category.get("products", []):
+            # If no variations, treat the product itself as the item
+            if not product.get("variations"):
+                all_items.append({"product": product, "variation": product})
+                continue
+            # If there are variations, create an item for each
+            for variation in product.get("variations", []):
+                all_items.append({"product": product, "variation": variation})
+        return all_items
+
+    def _get_item_name(self, item: dict) -> str:
+        product_name = item["product"].get("title", "")
+        # Variation might be the product itself if no variations exist
+        variation_name = item["variation"].get("title")
         
-        if not menu_data or not profile_data:
-            print("  -> Invalid or empty source data for Snappfood transformer.")
-            return None
+        # Avoid redundant names like "Pizza (Pizza)"
+        if variation_name and variation_name != product_name:
+            return f"{product_name} ({variation_name})"
+        return product_name
 
-        transformed_menu = {
-            "name": profile_data.get("title", "منو اصلی"),
-            "categories": []
-        }
+    def _get_item_description(self, item: dict) -> str:
+        return item["variation"].get("description", "")
 
-        for category in menu_data.get("menuCategories", []):
-            category_name = category.get("title", "")
-            new_category = {
-                "name": category_name,
-                "icon": assign_icon(category_name),
-                "visibleInMenu": True,
-                "items": []
-            }
-            
-            for product in category.get("products", []):
-                for variation in product.get("variations", []):
-                    item_name = product.get("title", "")
-                    if variation.get("title"):
-                        item_name = f"{item_name} ({variation['title']})"
-                    
-                    image_url = (variation.get("images") or product.get("images") or [{}])[0].get("src")
+    def _get_item_price(self, item: dict):
+        return item["variation"].get("price", 0)
 
-                    new_item = {
-                        "name": item_name.strip(),
-                        "description": variation.get("description", "").strip(),
-                        "price": convert_price_to_toman(variation.get("price")),
-                        "status": "available" if variation.get("active") else "unavailable",
-                        "image": None,
-                        "original_image_url": image_url,
-                    }
-                    new_category["items"].append(new_item)
-            
-            if new_category["items"]:
-                transformed_menu["categories"].append(new_category)
-            
-        return transformed_menu
+    def _get_item_status(self, item: dict) -> str:
+        is_active = item["variation"].get("active", False)
+        return "available" if is_active else "unavailable"
 
-    except Exception as e:
-        print(f"  -> An unexpected error occurred in Snappfood transformer: {e}")
-        return None
+    def _get_item_image_url(self, item: dict) -> str | None:
+        var_images = item["variation"].get("images")
+        prod_images = item["product"].get("images")
+        image_list = var_images or prod_images or []
+        return image_list[0].get("src") if image_list else None

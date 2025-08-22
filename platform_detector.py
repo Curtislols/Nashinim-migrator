@@ -10,6 +10,8 @@ PLATFORM_DOMAINS = {
     "qbar": "qbar.ir",
     "menusaz": "menusaz.com",
     "qrmenusaz": "qrmenusaz.com",
+    "snappfood": "snappfood.ir",
+    "menudigital": "menudigital.ir", # <-- ADDED THIS
 }
 
 # --- This dictionary defines clues found in the page's HTML content ---
@@ -30,7 +32,7 @@ def detect_platform(url: str) -> str | None:
     for platform_name, domain_clue in PLATFORM_DOMAINS.items():
         if domain_clue in hostname:
             print(f"     Platform detected: {platform_name} (via URL)")
-            return platform_name # Returns the correct short name (e.g., "qbar")
+            return platform_name
             
     # --- Method 2: Check for Delino's unique config.json file ---
     try:

@@ -1,19 +1,14 @@
 import json
 
 # Keyword mapping for category icons for the Menusaz platform
-ICON_MAPPING = {
-    "چای": "hot-tea",
-    "دمنوش": "hot-tea",
-    "قهوه": "coffee",
-    "نوشیدنی": "soda-can",
-    "اسموتی": "glass-water",
-    "شیک": "glass-water",
-    "صبحانه": "croissant",
-    "دسر": "cake-slice",
-    "کیک": "cake-slice",
-    # Add more as needed
-}
-DEFAULT_ICON = "utensils"
+def assign_icon(category_name: str, icon_mapping: dict, default_icon: str) -> str:
+    """Assigns an icon by checking for keywords in the category title."""
+    if not category_name:
+        return default_icon
+    for keyword, icon in icon_mapping.items():
+        if keyword in category_name:
+            return icon
+    return default_icon
 
 def assign_icon(category_name: str) -> str:
     """Assigns an icon by checking for keywords in the category title."""

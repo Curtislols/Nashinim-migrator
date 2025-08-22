@@ -2,14 +2,14 @@
 import json
 
 # --- Universal Helper Functions ---
-ICON_MAPPING = {
-    "پیتزا": "pizza-slice", "برگر": "hamburger", "مرغ": "chicken-dish",
-    "ماهی": "fish", "سالاد": "leaf", "نوشیدنی": "soda-can",
-    "قهوه": "coffee", "چای": "hot-tea", "دمنوش": "hot-tea",
-    "کیک": "cake-slice", "دسر": "cake-slice", "پاستا": "utensils",
-    "صبحانه": "croissant", "سوپ": "utensils", "ساید": "utensils",
-}
-DEFAULT_ICON = "utensils"
+def assign_icon(category_name: str, icon_mapping: dict, default_icon: str) -> str:
+    """Assigns an icon by checking for keywords in the category title."""
+    if not category_name:
+        return default_icon
+    for keyword, icon in icon_mapping.items():
+        if keyword in category_name:
+            return icon
+    return default_icon
 
 def assign_icon(category_name: str) -> str:
     """Assigns an icon by checking for keywords in the category title."""

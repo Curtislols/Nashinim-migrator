@@ -1,0 +1,14 @@
+# Python specific
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Output folders from your tools
+output/
+recon_report_*/
+
+# IDE and OS specific files
+.idea/
+.vscode/
+.DS_Store

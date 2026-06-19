@@ -12,7 +12,7 @@ sys.path.append(str(SCRIPT_DIR))
 from scrapers import (
     qbar_scraper, menusaz_scraper, qrmenusaz_scraper,
     menew_scraper, delino_scraper, hidigimenu_scraper,
-    snappfood_scraper, menudigital_scraper
+    snappfood_scraper, menudigital_scraper, snappstore_scraper
 )
 
 # --- Import Transformer CLASSES ---
@@ -24,6 +24,7 @@ from data_transformers.menudigital_transformer import MenudigitalTransformer
 from data_transformers.qbar_transformer import QbarTransformer
 from data_transformers.qrmenusaz_transformer import QrmenusazTransformer
 from data_transformers.snappfood_transformer import SnappfoodTransformer
+from data_transformers.snappstore_transformer import SnappstoreTransformer
 
 # --- Import other project modules ---
 from platform_detector import detect_platform
@@ -69,6 +70,7 @@ PLATFORM_MAPPING = {
     "hidigimenu": {"scraper": hidigimenu_scraper.scrape, "transformer": HidigimenuTransformer(ICON_MAPPING, DEFAULT_ICON).transform, "interactive": False},
     "snappfood": {"scraper": snappfood_scraper.scrape, "transformer": SnappfoodTransformer(ICON_MAPPING, DEFAULT_ICON).transform, "interactive": False},
     "menudigital": {"scraper": menudigital_scraper.scrape, "transformer": MenudigitalTransformer(ICON_MAPPING, DEFAULT_ICON).transform, "interactive": False},
+    "snappstore": {"scraper": snappstore_scraper.scrape, "transformer": SnappstoreTransformer(ICON_MAPPING, DEFAULT_ICON).transform, "interactive": False},
 }
 
 

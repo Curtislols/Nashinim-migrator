@@ -18,6 +18,15 @@ load_dotenv()
 SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.append(str(SCRIPT_DIR))
 
+
+def _init_worker():
+    """Ensure subprocess workers print Persian/UTF-8 text without crashing on Windows."""
+    import io
+    if hasattr(sys.stdout, "buffer"):
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+    if hasattr(sys.stderr, "buffer"):
+        sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
+
 from platform_detector import detect_platform
 from migrator_tool import PLATFORM_MAPPING, MenuNotFoundError, ScrapingError, TransformationError
 
@@ -39,7 +48,7 @@ scrape_semaphore: asyncio.Semaphore
 async def lifespan(app: FastAPI):
     global scrape_semaphore, executor
     scrape_semaphore = asyncio.Semaphore(MAX_CONCURRENT_JOBS)
-    executor = ProcessPoolExecutor()
+    executor = ProcessPoolExecutor(initializer=_init_worker)
     yield
     executor.shutdown(wait=True)
 

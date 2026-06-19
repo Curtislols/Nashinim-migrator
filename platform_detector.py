@@ -10,6 +10,7 @@ PLATFORM_DOMAINS = {
     "menusaz": "menusaz.com",
     "snappfood": "snappfood.ir",
     "menudigital": "menudigital.ir",
+    "snappstore": "snapp-store.com",
 }
 
 # --- UPDATED FINGERPRINTS ---

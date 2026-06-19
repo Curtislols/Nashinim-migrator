@@ -45,9 +45,10 @@ async def scrape(url: str) -> dict:
             profile_data = profile_response.json().get('data', {})
             menu_data = menu_response.json().get('data', {})
 
+    except httpx.HTTPStatusError as e:
+        raise ValueError(f"Snappfood API request failed with status: {e.response.status_code}")
     except httpx.RequestError as e:
-        status_code = e.response.status_code if hasattr(e, 'response') and e.response else "N/A"
-        raise ValueError(f"Snappfood API request failed with status code: {status_code}")
+        raise ValueError(f"Snappfood API connection error: {e}")
 
     record["api_data"] = {"profile": profile_data, "menu": menu_data}
     return record

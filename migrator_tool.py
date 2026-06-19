@@ -1,104 +1,138 @@
-# migrator_tool.py
-import json
 import sys
+import json
 from pathlib import Path
+import asyncio
+import inspect
 
-# --- Import your modules ---
-from scrapers import qbarscraper, menusazscraper, qrmenusazscraper, menewautoscraper, delino_scraper, hidigimenu_scraper
-from data_transformers import qbar_transformer, menusaz_transformer, menew_transformer, qrmenusaz_transformer, delino_transformer, hidigimenu_transformer
-from platform_detector import detect_platform # <-- NEW, CLEAN IMPORT
-
-print("✅ Migrator Tool script started...")
-
-# --- ❗️ CONFIGURATION ---
-YOUR_API_ENDPOINT = "https://api.yoursite.com/v1/images"
-YOUR_API_TOKEN = "your_secret_bearer_token_here"
-# -------------------------
-
+# --- Add the project root to Python's path ---
 SCRIPT_DIR = Path(__file__).resolve().parent
-RAW_DATA_DIR = SCRIPT_DIR / "output/raw_data"
-TRANSFORMED_DATA_DIR = SCRIPT_DIR / "output/transformed_data"
-FINAL_DATA_DIR = SCRIPT_DIR / "output/final_data"
-RAW_DATA_DIR.mkdir(parents=True, exist_ok=True)
-TRANSFORMED_DATA_DIR.mkdir(parents=True, exist_ok=True)
-FINAL_DATA_DIR.mkdir(parents=True, exist_ok=True)
+sys.path.append(str(SCRIPT_DIR))
 
-# --- Platform to Module Mapping ---
+# --- Import scrapers ---
+from scrapers import (
+    qbar_scraper, menusaz_scraper, qrmenusaz_scraper,
+    menew_scraper, delino_scraper, hidigimenu_scraper,
+    snappfood_scraper, menudigital_scraper, snappstore_scraper
+)
+
+# --- Import Transformer CLASSES ---
+from data_transformers.delino_transformer import DelinoTransformer
+from data_transformers.hidigimenu_transformer import HidigimenuTransformer
+from data_transformers.menew_transformer import MenewTransformer
+from data_transformers.menusaz_transformer import MenusazTransformer
+from data_transformers.menudigital_transformer import MenudigitalTransformer
+from data_transformers.qbar_transformer import QbarTransformer
+from data_transformers.qrmenusaz_transformer import QrmenusazTransformer
+from data_transformers.snappfood_transformer import SnappfoodTransformer
+from data_transformers.snappstore_transformer import SnappstoreTransformer
+
+# --- Import other project modules ---
+from platform_detector import detect_platform
+from scrapers.menusaz_scraper import get_menu_choices
+# from image_migrator import migrate_images_for_menu # <-- THIS LINE IS NOW REMOVED
+
+# --- Custom Exception Classes ---
+class ScrapingError(Exception):
+    """Raised when a scraper fails to access or retrieve data from a website."""
+    pass
+
+class MenuNotFoundError(ScrapingError):
+    """A specific type of ScrapingError raised when a menu cannot be found (404)."""
+    pass
+
+class TransformationError(Exception):
+    """Raised when the transformer fails to process the raw data."""
+    pass
+
+
+# --- Load Configuration ---
+try:
+    with open(SCRIPT_DIR / "config.json", 'r', encoding='utf-8') as f:
+        config = json.load(f)
+    ICON_MAPPING = config["icon_mapping"]
+    DEFAULT_ICON = config["default_icon"]
+except FileNotFoundError:
+    print("❌ FATAL ERROR: config.json not found. Please create it.")
+    sys.exit(1)
+
+# --- Platform to Class Instance Mapping ---
 PLATFORM_MAPPING = {
-    "delino": {"scraper": delino_scraper.scrape, "transformer": delino_transformer.transform},
-    "menew": {"scraper": menewautoscraper.scrape, "transformer": menew_transformer.transform},
-    "menusaz": {"scraper": menusazscraper.scrape, "transformer": menusaz_transformer.transform},
-    "qrmenusaz": {"scraper": qrmenusazscraper.scrape, "transformer": qrmenusaz_transformer.transform},
-    "qbar": {"scraper": qbarscraper.scrape, "transformer": qbar_transformer.transform},
-    "hidigimenu": {"scraper": hidigimenu_scraper.scrape, "transformer": hidigimenu_transformer.transform},
+    "menusaz": {
+        "scraper": menusaz_scraper.scrape,
+        "transformer": MenusazTransformer(ICON_MAPPING, DEFAULT_ICON).transform,
+        "interactive": True,
+        "choice_finder": get_menu_choices
+    },
+    "delino": {"scraper": delino_scraper.scrape, "transformer": DelinoTransformer(ICON_MAPPING, DEFAULT_ICON).transform, "interactive": False},
+    "menew": {"scraper": menew_scraper.scrape, "transformer": MenewTransformer(ICON_MAPPING, DEFAULT_ICON).transform, "interactive": False},
+    "qrmenusaz": {"scraper": qrmenusaz_scraper.scrape, "transformer": QrmenusazTransformer(ICON_MAPPING, DEFAULT_ICON).transform, "interactive": False},
+    "qbar": {"scraper": qbar_scraper.scrape, "transformer": QbarTransformer(ICON_MAPPING, DEFAULT_ICON).transform, "interactive": False},
+    "hidigimenu": {"scraper": hidigimenu_scraper.scrape, "transformer": HidigimenuTransformer(ICON_MAPPING, DEFAULT_ICON).transform, "interactive": False},
+    "snappfood": {"scraper": snappfood_scraper.scrape, "transformer": SnappfoodTransformer(ICON_MAPPING, DEFAULT_ICON).transform, "interactive": False},
+    "menudigital": {"scraper": menudigital_scraper.scrape, "transformer": MenudigitalTransformer(ICON_MAPPING, DEFAULT_ICON).transform, "interactive": False},
+    "snappstore": {"scraper": snappstore_scraper.scrape, "transformer": SnappstoreTransformer(ICON_MAPPING, DEFAULT_ICON).transform, "interactive": False},
 }
 
-# --- Image migration functions (unchanged) ---
-# ... (Full, unchanged image migration functions go here) ...
-def migrate_image(image_url: str) -> str | None: pass
-def migrate_images_for_menu(menu_data: dict): pass
 
-# --- MAIN PIPELINE ---
-def process_restaurant(url: str, should_migrate_images: bool):
+# --- MAIN PIPELINE for Command-Line Tool ---
+async def process_restaurant(url: str, output_path: Path):
     print(f"\n=============================================")
     print(f"STARTING PIPELINE FOR: {url}")
     print(f"=============================================")
     try:
-        platform_name = detect_platform(url)
+        platform_name = await asyncio.to_thread(detect_platform, url)
         if not platform_name:
             raise Exception(f"Could not identify the platform for {url}")
-            
-        scraper_func = PLATFORM_MAPPING[platform_name]["scraper"]
-        transformer_func = PLATFORM_MAPPING[platform_name]["transformer"]
 
-        # STAGE 1: SCRAPE
-        raw_data = scraper_func(url)
-        slug = (raw_data.get("slug") or
-                raw_data.get("api_data", {}).get("profile", {}).get("domain") or
-                raw_data.get("hostname", "data").split('.')[0])
+        platform_config = PLATFORM_MAPPING[platform_name]
+        scraper_func = platform_config["scraper"]
+        transformer_func = platform_config["transformer"]
         
-        raw_file_path = RAW_DATA_DIR / f"{platform_name}_{slug}_raw.json"
-        with raw_file_path.open('w', encoding='utf-8') as f: json.dump(raw_data, f, indent=2, ensure_ascii=False)
+        if inspect.iscoroutinefunction(scraper_func):
+            raw_data = await scraper_func(url)
+        else:
+            raw_data = await asyncio.to_thread(scraper_func, url)
+
+        slug = raw_data.get("id") or raw_data.get("slug") or raw_data.get("hostname", "data").split('.')[0]
+        
+        (output_path / "raw_data").mkdir(parents=True, exist_ok=True)
+        raw_file_path = output_path / "raw_data" / f"{platform_name}_{slug}_raw.json"
+        with raw_file_path.open('w', encoding='utf-8') as f:
+            json.dump(raw_data, f, indent=2, ensure_ascii=False)
         print(f"  -> Stage 1 Complete: Raw data saved to {raw_file_path}")
 
-        # STAGE 2: TRANSFORM
         transformed_data = transformer_func(raw_data)
-        if not transformed_data: raise Exception("Transformation failed.")
+        if not transformed_data:
+            raise Exception("Transformation failed.")
 
-        transformed_file_path = TRANSFORMED_DATA_DIR / f"{platform_name}_{slug}_transformed.json"
-        with transformed_file_path.open('w', encoding='utf-8') as f: json.dump(transformed_data, f, indent=2, ensure_ascii=False)
+        (output_path / "transformed_data").mkdir(parents=True, exist_ok=True)
+        transformed_file_path = output_path / "transformed_data" / f"{platform_name}_{slug}_transformed.json"
+        with transformed_file_path.open('w', encoding='utf-8') as f:
+            json.dump(transformed_data, f, indent=2, ensure_ascii=False)
         print(f"  -> Stage 2 Complete: Transformed menu saved to {transformed_file_path}")
-
-        # STAGE 3: MIGRATE IMAGES
-        if should_migrate_images:
-            print("  -> Starting Stage 3: Image Migration...")
-            final_data = migrate_images_for_menu(transformed_data)
-            final_file_path = FINAL_DATA_DIR / f"{platform_name}_{slug}_complete.json"
-            with final_file_path.open('w', encoding='utf-8') as f: json.dump(final_data, f, indent=2, ensure_ascii=False)
-            print(f"  -> Stage 3 Complete: Final data saved to {final_file_path}")
-        else:
-            print("  -> Stage 3 (Image Migration) was skipped. Use the --with-images flag to run it.")
+        print("  -> Pipeline finished successfully.")
 
     except Exception as e:
         print(f"  -> !!! PIPELINE FAILED for {url}: {e}")
 
-# --- MAIN EXECUTION BLOCK ---
-if __name__ == "__main__":
+# --- MAIN ASYNC EXECUTION FUNCTION for Command-Line Tool ---
+async def main():
+    print("✅ Migrator Tool script started...")
+    
     if len(sys.argv) < 2:
         print("\n❌ Error: No URLs provided.")
-        print("✅ Usage: python migrator_tool.py <url1> <url2> ... [--with-images]")
+        print("✅ Usage: python migrator_tool.py <url1> <url2> ...")
         sys.exit(1)
 
-    urls_to_process = [arg for arg in sys.argv[1:] if arg != "--with-images"]
-    migrate_flag = "--with-images" in sys.argv
+    urls_to_process = sys.argv[1:]
+    print(f"Found {len(urls_to_process)} URL(s) to process.")
+    OUTPUT_DIR = SCRIPT_DIR / "output"
 
-    if not urls_to_process:
-        print("\n❌ Error: No URLs provided to process.")
-        sys.exit(1)
-
-    print(f"Found {len(urls_to_process)} URL(s) to process. Image migration is {'ENABLED' if migrate_flag else 'DISABLED'}.")
-
-    for restaurant_url in urls_to_process:
-        process_restaurant(restaurant_url, should_migrate_images=migrate_flag)
+    tasks = [process_restaurant(url, output_path=OUTPUT_DIR) for url in urls_to_process]
+    await asyncio.gather(*tasks)
 
     print("\n\n🎉 All pipelines finished.")
+
+# --- MAIN EXECUTION BLOCK for Command-Line Tool ---
+if __name__ == "__main__":
+    asyncio.run(main())

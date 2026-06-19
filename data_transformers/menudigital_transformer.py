@@ -1,20 +1,20 @@
-# data_transformers/qrmenusaz_transformer.py
+# data_transformers/menudigital_transformer.py
 from .base_transformer import BaseTransformer
 
-class QrmenusazTransformer(BaseTransformer):
-    """Transforms raw QRMenusaz JSON into our standard menu format."""
-
+class MenudigitalTransformer(BaseTransformer):
+    """Transforms raw MenuDigital HTML data into our standard menu format."""
+    
     def _is_source_valid(self, api_data: dict) -> bool:
-        return api_data.get("status") == True
+        return "categories" in api_data
 
     def _get_menu_data(self, api_data: dict) -> dict:
         return api_data
 
     def _get_menu_name(self, menu_data: dict) -> str:
-        return "منو اصلی"
+        return menu_data.get("name", "منو اصلی")
 
     def _get_categories(self, menu_data: dict) -> list:
-        return menu_data.get("items", [])
+        return menu_data.get("categories", [])
 
     def _get_category_name(self, category: dict) -> str:
         return category.get("name", "")
@@ -32,11 +32,10 @@ class QrmenusazTransformer(BaseTransformer):
         return item.get("description", "").strip()
 
     def _get_item_price(self, item: dict):
-        # The price is in KiloToman, which our helper function handles correctly.
-        return item.get("price_number", "0")
+        return item.get("price", "0")
 
     def _get_item_status(self, item: dict) -> str:
-        return "available" if item.get("e_enable") == "1" else "unavailable"
+        return "available"
 
     def _get_item_image_url(self, item: dict) -> str | None:
         return item.get("image")

@@ -1,0 +1,21 @@
+{
+  "icon_mapping": {
+    "پیتزا": "pizza-slice",
+    "برگر": "hamburger",
+    "مرغ": "chicken-dish",
+    "ماهی": "fish",
+    "سالاد": "leaf",
+    "نوشیدنی": "soda-can",
+    "قهوه": "coffee",
+    "چای": "hot-tea",
+    "دمنوش": "hot-tea",
+    "کیک": "cake-slice",
+    "دسر": "cake-slice",
+    "پاستا": "utensils",
+    "صبحانه": "croissant",
+    "سوپ": "utensils",
+    "ساید": "utensils",
+    "کباب": "utensils"
+  },
+  "default_icon": "utensils"
+}

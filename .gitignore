@@ -1,4 +1,15 @@
-# Python specific
+# Python s  pecific
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Output folders from your tools
+output/
+recon_report_*/# Python specific
+__pycache__/
+*.pyc
+venv/# Python specific
 __pycache__/
 *.pyc
 venv/
@@ -7,6 +18,21 @@ venv/
 # Output folders from your tools
 output/
 recon_report_*/
+
+# IDE and OS specific files
+.idea/
+.vscode/
+.DS_Store
+.venv/
+
+# Output folders from your tools
+output/
+recon_report_*/
+
+# IDE and OS specific files
+.idea/
+.vscode/
+.DS_Store
 
 # IDE and OS specific files
 .idea/

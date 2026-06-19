@@ -1,98 +1,68 @@
 # data_transformers/menusaz_transformer.py
-import json
 import re
+from .base_transformer import BaseTransformer
 
-# --- Universal Helper Functions ---
-ICON_MAPPING = {
-    "چای": "hot-tea", "دمنوش": "hot-tea", "قهوه": "coffee",
-    "نوشیدنی": "soda-can", "اسموتی": "glass-water", "شیک": "glass-water",
-    "صبحانه": "croissant", "دسر": "cake-slice", "کیک": "cake-slice",
-    "سالاد": "leaf", "سوخاری": "drumstick-bite", "کیمباپ": "utensils",
-    "نودل": "utensils",
-}
-DEFAULT_ICON = "utensils"
+class MenusazTransformer(BaseTransformer):
+    """Transforms raw Menusaz JSON into our standard menu format."""
 
-def assign_icon(category_name: str) -> str:
-    """Assigns an icon by checking for keywords in the category title."""
-    if not category_name:
-        return DEFAULT_ICON
-    for keyword, icon in ICON_MAPPING.items():
-        if keyword in category_name:
-            return icon
-    return DEFAULT_ICON
+    def _is_source_valid(self, api_data: dict) -> bool:
+        return api_data.get("status") == True
 
-def convert_price_to_toman(price_str: str) -> int:
-    """
-    Converts a price string from an unknown unit (Rial, Toman, or KiloToman)
-    to an integer in Toman using a heuristic.
-    """
-    if not price_str or not price_str.strip().isdigit():
-        return 0
-    price_num = int(price_str.strip())
-    if price_num > 1000000:
-        return price_num // 10
-    elif 0 < price_num < 1000:
-        return price_num * 1000
-    else:
-        return price_num
+    def _get_menu_data(self, api_data: dict) -> dict:
+        return api_data
 
-def transform(source_data: dict) -> dict | None:
-    """
-    Transforms a raw Menusaz/QRmenusaz JSON object into our standard menu format.
-    """
-    if not source_data or not source_data.get("status"):
-        print("  -> Invalid or empty source data for Menusaz transformer.")
-        return None
+    def _get_menu_name(self, menu_data: dict) -> str:
+        return "منو اصلی"
 
-    transformed_menu = { "name": "منو اصلی", "categories": [] }
-    source_categories = source_data.get("items", [])
+    def _get_categories(self, menu_data: dict) -> list:
+        return menu_data.get("items", [])
 
-    for source_cat in source_categories:
-        category_name = source_cat.get("name", "")
-        new_category = {
-            "name": category_name,
-            "icon": assign_icon(category_name),
-            "visibleInMenu": True,
-            "items": []
-        }
+    def _get_category_name(self, category: dict) -> str:
+        return category.get("name", "")
 
-        for item in source_cat.get("items", []):
+    def _is_category_visible(self, category: dict) -> bool:
+        return True
+
+    def _get_items(self, category: dict) -> list:
+        # This platform has complex variation logic that we handle here
+        all_items = []
+        for item in category.get("items", []):
             item_name = item.get("name", "")
-            price_number_str = item.get("price_number", "0")
+            price_str = item.get("price_number", "0")
             
-            # Logic to handle variations (items with multiple prices)
-            if "/" in price_number_str:
-                prices = [p.strip() for p in price_number_str.split('/')]
+            # If price contains '/', it's a variation product
+            if "/" in price_str:
+                prices = [p.strip() for p in price_str.split('/')]
+                # Try to extract variation names from parenthesis
                 match = re.search(r'\((.*?)\)', item_name)
                 if match:
-                    variation_names = [v.strip() for v in match.group(1).split('/')]
+                    var_names = [v.strip() for v in match.group(1).split('/')]
                     base_name = item_name.split('(')[0].strip()
                     
-                    if len(prices) == len(variation_names):
-                        for i, price_str in enumerate(prices):
-                            new_item = {
-                                "name": f"{base_name} ({variation_names[i]})",
-                                "description": item.get("description", "").strip(),
-                                "price": convert_price_to_toman(price_str), # Using correct function
-                                "status": "available" if item.get("e_enable") == "1" else "unavailable",
-                                "image": None,
-                                "original_image_url": item.get("image") if item.get("image") else None,
-                            }
-                            new_category["items"].append(new_item)
-                        continue
-            
-            # Logic for simple, single-price items
-            new_item = {
-                "name": item_name.strip(),
-                "description": item.get("description", "").strip(),
-                "price": convert_price_to_toman(price_number_str), # Using correct function
-                "status": "available" if item.get("e_enable") == "1" else "unavailable",
-                "image": None,
-                "original_image_url": item.get("image") if item.get("image") else None,
-            }
-            new_category["items"].append(new_item)
+                    if len(prices) == len(var_names):
+                        for i, price in enumerate(prices):
+                            # Create a unique item for each variation
+                            var_item = item.copy()
+                            var_item["name"] = f"{base_name} ({var_names[i]})"
+                            var_item["price_number"] = price
+                            all_items.append(var_item)
+                        continue # Skip appending the original item
 
-        if new_category["items"]:
-            transformed_menu["categories"].append(new_category)
-            
-    return transformed_menu
+            # If no variations, add the simple item
+            all_items.append(item)
+        return all_items
+
+    def _get_item_name(self, item: dict) -> str:
+        return item.get("name", "").strip()
+
+    def _get_item_description(self, item: dict) -> str:
+        return item.get("description", "").strip()
+
+    def _get_item_price(self, item: dict):
+        return item.get("price_number", "0")
+
+    def _get_item_status(self, item: dict) -> str:
+        return "available" if item.get("e_enable") == "1" else "unavailable"
+
+    def _get_item_image_url(self, item: dict) -> str | None:
+        return item.get("image")

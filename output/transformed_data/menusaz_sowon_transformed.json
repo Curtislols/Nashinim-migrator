@@ -236,7 +236,7 @@
         {
           "name": "بیبیمباپ",
           "description": "حجم تک نفره/ 2نفره\r\nبرنج، سبزیجات مختلف تفت داده شده (قارچ صدفی، قارچ، اسفناج، هویج، کدو، جوانه، کیمچی و...)، گوشت مرینیت شده با سس بولگوگی، تخم مرغ، سس تند مخصوص بیبیمباپ",
-          "price": 0,
+          "price": 350580,
           "status": "available",
           "image": null,
           "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710846116.jpg"
@@ -354,13 +354,13 @@
     },
     {
       "name": "سوخاری ",
-      "icon": "drumstick-bite",
+      "icon": "utensils",
       "visibleInMenu": true,
       "items": [
         {
           "name": "سونسال چیکن",
           "description": "تکه های سینه مرغ سوخاری به سبک کره ای، سالاد، به همراه گارنیش جوانه، پیازچه، کنجد و سس انتخابی کره ای ( هانی یانگنیام، مِکُوم، تانجان ) \r\n\r\n\r\nسونسال ویژه به همراه سیبزمینی سرخکرده میباشد",
-          "price": 0,
+          "price": 415375,
           "status": "available",
           "image": null,
           "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710585999.jpg"
@@ -392,7 +392,7 @@
         {
           "name": "چیبل",
           "description": "توپک های میکس مرغ و پنیر سوخاری، سالاد، به همراه گارنیش جوانه، پیازچه، کنجد، سس کره ای انتخابی (هانی یانگنیام، مکوم، تانجان)",
-          "price": 0,
+          "price": 430390,
           "status": "available",
           "image": null,
           "original_image_url": "https://sowon.menusaz.com/Media_folder/3664/img_3664_1710585758.jpg"

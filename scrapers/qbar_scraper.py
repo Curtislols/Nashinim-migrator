@@ -4,7 +4,7 @@ import requests
 import time
 from urllib.parse import urlparse
 # ❗️THIS LINE MUST BE CHANGED❗️
-from scrapers.shared.scraper_helpers import get_browser_page # Was: from .shared...
+from scrapers.scraper_helpers import get_browser_page # Was: from ....
 
 
 def scrape(url: str) -> dict:
